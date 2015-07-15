@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BE34C6401B529DE60097C962"
+               BlueprintIdentifier = "BE794C8A1B55A020006A1E6A"
                BuildableName = "wwkd.app"
                BlueprintName = "wwkd"
                ReferencedContainer = "container:wwkd.xcodeproj">
@@ -23,16 +23,16 @@
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BE34C6401B529DE60097C962"
+            BlueprintIdentifier = "BE794C8A1B55A020006A1E6A"
             BuildableName = "wwkd.app"
             BlueprintName = "wwkd"
             ReferencedContainer = "container:wwkd.xcodeproj">
@@ -42,11 +42,11 @@
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BE34C6401B529DE60097C962"
+            BlueprintIdentifier = "BE794C8A1B55A020006A1E6A"
             BuildableName = "wwkd.app"
             BlueprintName = "wwkd"
             ReferencedContainer = "container:wwkd.xcodeproj">
@@ -65,16 +65,16 @@
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BE34C6401B529DE60097C962"
+            BlueprintIdentifier = "BE794C8A1B55A020006A1E6A"
             BuildableName = "wwkd.app"
             BlueprintName = "wwkd"
             ReferencedContainer = "container:wwkd.xcodeproj">

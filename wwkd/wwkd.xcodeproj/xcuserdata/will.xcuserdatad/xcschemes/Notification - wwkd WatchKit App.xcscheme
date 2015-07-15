@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BE34C6521B529DE60097C962"
+               BlueprintIdentifier = "BE794C9C1B55A020006A1E6A"
                BuildableName = "wwkd WatchKit App.app"
                BlueprintName = "wwkd WatchKit App"
                ReferencedContainer = "container:wwkd.xcodeproj">
@@ -28,9 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BE34C6401B529DE60097C962"
-               BuildableName = "wwkd.app"
-               BlueprintName = "wwkd"
+               BlueprintIdentifier = "BE794CAB1B55A020006A1E6A"
+               BuildableName = "wwkd WatchKit Extension.appex"
+               BlueprintName = "wwkd WatchKit Extension"
                ReferencedContainer = "container:wwkd.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,25 +42,25 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BE34C6611B529DE60097C962"
-               BuildableName = "wwkd WatchKit Extension.appex"
-               BlueprintName = "wwkd WatchKit Extension"
+               BlueprintIdentifier = "BE794C8A1B55A020006A1E6A"
+               BuildableName = "wwkd.app"
+               BlueprintName = "wwkd"
                ReferencedContainer = "container:wwkd.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BE34C6521B529DE60097C962"
+            BlueprintIdentifier = "BE794C9C1B55A020006A1E6A"
             BuildableName = "wwkd WatchKit App.app"
             BlueprintName = "wwkd WatchKit App"
             ReferencedContainer = "container:wwkd.xcodeproj">
@@ -70,11 +70,11 @@
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
@@ -87,7 +87,7 @@
          RemotePath = "/wwkd WatchKit App">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BE34C6521B529DE60097C962"
+            BlueprintIdentifier = "BE794C9C1B55A020006A1E6A"
             BuildableName = "wwkd WatchKit App.app"
             BlueprintName = "wwkd WatchKit App"
             ReferencedContainer = "container:wwkd.xcodeproj">
@@ -96,7 +96,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BE34C6521B529DE60097C962"
+            BlueprintIdentifier = "BE794C9C1B55A020006A1E6A"
             BuildableName = "wwkd WatchKit App.app"
             BlueprintName = "wwkd WatchKit App"
             ReferencedContainer = "container:wwkd.xcodeproj">
@@ -106,10 +106,10 @@
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
       debugDocumentVersioning = "YES"
       launchAutomaticallySubstyle = "8"
       notificationPayloadFile = "wwkd WatchKit Extension/PushNotificationPayload.apns">
@@ -119,7 +119,7 @@
          RemotePath = "/wwkd WatchKit App">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BE34C6521B529DE60097C962"
+            BlueprintIdentifier = "BE794C9C1B55A020006A1E6A"
             BuildableName = "wwkd WatchKit App.app"
             BlueprintName = "wwkd WatchKit App"
             ReferencedContainer = "container:wwkd.xcodeproj">
@@ -128,7 +128,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BE34C6521B529DE60097C962"
+            BlueprintIdentifier = "BE794C9C1B55A020006A1E6A"
             BuildableName = "wwkd WatchKit App.app"
             BlueprintName = "wwkd WatchKit App"
             ReferencedContainer = "container:wwkd.xcodeproj">

@@ -1,9 +1,8 @@
 //
-
 //  AppDelegate.swift
 //  wwkd
 //
-//  Created by will on 12/07/2015.
+//  Created by will on 14/07/2015.
 //  Copyright © 2015 will. All rights reserved.
 //
 
@@ -14,12 +13,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        let notificationTypes  = UIUserNotificationType.Sound.union(UIUserNotificationType.Alert).union(UIUserNotificationType.Badge)
-        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: notificationTypes, categories: nil))
-        // Override point for customization after application launch.
+        let types =
+            UIUserNotificationType.Badge.union(
+            UIUserNotificationType.Alert.union(
+            UIUserNotificationType.Sound))
+        
+        let settings = UIUserNotificationSettings(forTypes: types, categories: [])
+        
+        application.registerUserNotificationSettings(settings)
+        application.registerForRemoteNotifications()
+        
         return true
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let characterSet = NSCharacterSet(charactersInString: "<>")
+        
+        let deviceTokenString =
+            deviceToken.description
+                .stringByTrimmingCharactersInSet(characterSet)
+                .stringByReplacingOccurrencesOfString(" ", withString: "")
+        
+        Notifier.register(deviceTokenString)
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        print(error.localizedDescription)
     }
 
     func applicationWillResignActive(application: UIApplication) {

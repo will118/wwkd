@@ -1,0 +1,6 @@
+.DS_Store
+certs
+*.pem
+*.crt
+*.p12
+node_modules

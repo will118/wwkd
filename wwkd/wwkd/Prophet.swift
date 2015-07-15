@@ -65,7 +65,7 @@ class Prophet {
     private func parseJson(path: String) -> [Quote]? {
         if let data = NSData(contentsOfFile: path) {
            do {
-               let jsonDict = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as? NSArray
+               let jsonDict = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? NSArray
             
                 return jsonDict?.reduce([], combine: { (acc, x) -> [Quote] in
                    let name = x["source"] as? String
@@ -91,13 +91,6 @@ class Prophet {
         } else {
            return nil
         }
-    }
-    
-    func sendNotification() {
-        let notif = UILocalNotification()
-        notif.alertAction = "What Would Kanye Do"
-        notif.alertBody = self.quotes.get().body
-        UIApplication.sharedApplication().scheduleLocalNotification(notif)
     }
 
 }

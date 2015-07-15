@@ -6,49 +6,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wwkd/Notifier.swift"
-            timestampString = "458434226.523382"
+            timestampString = "458611774.339378"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "backgroundTask(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "wwkd.Notifier.backgroundTask (wwkd.Notifier)(ObjectiveC.NSTimer) -&gt; ()"
-                  moduleName = "wwkd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/will/ye/wwkd/wwkd/Notifier.swift"
-                  timestampString = "458434226.535716"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "wwkd.Notifier.(backgroundTask (wwkd.Notifier) -&gt; (ObjectiveC.NSTimer) -&gt; ()).(closure #1)"
-                  moduleName = "wwkd"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/will/ye/wwkd/wwkd/Notifier.swift"
-                  timestampString = "458434226.536056"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "handler(_:response:error:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

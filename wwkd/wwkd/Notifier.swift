@@ -19,14 +19,30 @@ class Notifier : NSObject {
         super.init()
     }
     
-    func backgroundTask(timer:NSTimer) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), { () -> Void in
-            self.prophet.sendNotification()
-        })
-    }
+    static func register(token: String) {
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://192.168.1.94:3000/register")!)
+        request.HTTPMethod = "POST"
+        request.allowsCellularAccess = false
         
-    func start() {
-        timer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: "backgroundTask:", userInfo: nil, repeats: true)
+        let params = ["token": token] as Dictionary<String, String>
+        
+        do {
+            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(params, options: [])
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+        } catch {
+            print("Error adding params to POST")
+        }
+        
+        func handler (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void {
+            print(error?.description)
+        }
+        
+        let session = NSURLSession.sharedSession()
+        
+        if let t = session.dataTaskWithRequest(request, completionHandler: handler) {
+            t.resume()
+        }
     }
 
 }
