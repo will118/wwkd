@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE17E6241B56FBB300C452A9 /* Quote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE17E6221B56FBB300C452A9 /* Quote+CoreDataProperties.swift */; };
+		BE17E6251B56FBB300C452A9 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE17E6231B56FBB300C452A9 /* Quote.swift */; };
+		BE37CEA91B56F59D00EA260B /* QuoteLibrary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE37CEA71B56F59D00EA260B /* QuoteLibrary.xcdatamodeld */; };
 		BE794C8F1B55A020006A1E6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE794C8E1B55A020006A1E6A /* AppDelegate.swift */; };
 		BE794C911B55A020006A1E6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE794C901B55A020006A1E6A /* ViewController.swift */; };
 		BE794C941B55A020006A1E6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE794C921B55A020006A1E6A /* Main.storyboard */; };
@@ -21,8 +24,8 @@
 		BE794CB81B55A021006A1E6A /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE794CB71B55A021006A1E6A /* NotificationController.swift */; };
 		BE794CBA1B55A021006A1E6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE794CB91B55A021006A1E6A /* Assets.xcassets */; };
 		BE794CCB1B55A035006A1E6A /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE794CC91B55A035006A1E6A /* Notifier.swift */; };
-		BE794CCC1B55A035006A1E6A /* Prophet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE794CCA1B55A035006A1E6A /* Prophet.swift */; };
-		BE794CCE1B55A03E006A1E6A /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = BE794CCD1B55A03E006A1E6A /* quotes.json */; };
+		BE794CCC1B55A035006A1E6A /* QuoteLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE794CCA1B55A035006A1E6A /* QuoteLibrary.swift */; };
+		BEC11F961B57223D0090A2BF /* quotes_library.json in Resources */ = {isa = PBXBuildFile; fileRef = BEC11F951B57223D0090A2BF /* quotes_library.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE17E6221B56FBB300C452A9 /* Quote+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Quote+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BE17E6231B56FBB300C452A9 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		BE37CEA81B56F59D00EA260B /* QuoteLibrary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QuoteLibrary.xcdatamodel; sourceTree = "<group>"; };
 		BE794C8B1B55A020006A1E6A /* wwkd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wwkd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE794C8E1B55A020006A1E6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE794C901B55A020006A1E6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,8 +93,8 @@
 		BE794CB91B55A021006A1E6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE794CBB1B55A021006A1E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE794CC91B55A035006A1E6A /* Notifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
-		BE794CCA1B55A035006A1E6A /* Prophet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prophet.swift; sourceTree = "<group>"; };
-		BE794CCD1B55A03E006A1E6A /* quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
+		BE794CCA1B55A035006A1E6A /* QuoteLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteLibrary.swift; sourceTree = "<group>"; };
+		BEC11F951B57223D0090A2BF /* quotes_library.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes_library.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,10 +138,13 @@
 		BE794C8D1B55A020006A1E6A /* wwkd */ = {
 			isa = PBXGroup;
 			children = (
-				BE794CCD1B55A03E006A1E6A /* quotes.json */,
+				BE17E6221B56FBB300C452A9 /* Quote+CoreDataProperties.swift */,
+				BE17E6231B56FBB300C452A9 /* Quote.swift */,
+				BEC11F951B57223D0090A2BF /* quotes_library.json */,
 				BE794CC91B55A035006A1E6A /* Notifier.swift */,
-				BE794CCA1B55A035006A1E6A /* Prophet.swift */,
+				BE794CCA1B55A035006A1E6A /* QuoteLibrary.swift */,
 				BE794C8E1B55A020006A1E6A /* AppDelegate.swift */,
+				BE37CEA71B56F59D00EA260B /* QuoteLibrary.xcdatamodeld */,
 				BE794C901B55A020006A1E6A /* ViewController.swift */,
 				BE794C921B55A020006A1E6A /* Main.storyboard */,
 				BE794C951B55A020006A1E6A /* Assets.xcassets */,
@@ -284,10 +293,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE794CCE1B55A03E006A1E6A /* quotes.json in Resources */,
 				BE794C991B55A020006A1E6A /* LaunchScreen.storyboard in Resources */,
 				BE794C961B55A020006A1E6A /* Assets.xcassets in Resources */,
 				BE794C941B55A020006A1E6A /* Main.storyboard in Resources */,
+				BEC11F961B57223D0090A2BF /* quotes_library.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,9 +324,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE17E6241B56FBB300C452A9 /* Quote+CoreDataProperties.swift in Sources */,
 				BE794C911B55A020006A1E6A /* ViewController.swift in Sources */,
+				BE37CEA91B56F59D00EA260B /* QuoteLibrary.xcdatamodeld in Sources */,
 				BE794CCB1B55A035006A1E6A /* Notifier.swift in Sources */,
-				BE794CCC1B55A035006A1E6A /* Prophet.swift in Sources */,
+				BE794CCC1B55A035006A1E6A /* QuoteLibrary.swift in Sources */,
+				BE17E6251B56FBB300C452A9 /* Quote.swift in Sources */,
 				BE794C8F1B55A020006A1E6A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,6 +606,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BE37CEA71B56F59D00EA260B /* QuoteLibrary.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BE37CEA81B56F59D00EA260B /* QuoteLibrary.xcdatamodel */,
+			);
+			currentVersion = BE37CEA81B56F59D00EA260B /* QuoteLibrary.xcdatamodel */;
+			path = QuoteLibrary.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BE794C831B55A020006A1E6A /* Project object */;
 }

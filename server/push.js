@@ -1,21 +1,51 @@
 var apn = require('apn');
+var User = require('./user.js');
 
-var options = { };
+var apnConnection = new apn.Connection({});
 
-var apnConnection = new apn.Connection(options);
+function noteForQuote(quote) {
+  var note = new apn.Notification();
+  note.expiry = Math.floor(Date.now() / 1000) + 3600;
+  note.badge = 1;
+  note.sound = "ping.aiff";
+  note.alert = quote.body;
+  note.payload = {'messageFrom': 'Yeezus'};
 
-var token = '58473a559f4b3550a9b3ae0a29d6bb176be7fc4ecdfecfcc7542b18e678d3fc9'
+  quote.shows++
+  quote.save(function(err) { if (err) throw err });
+  return note;
+}
 
-var myDevice = new apn.Device(token);
+function pushQuoteToOne(quote, token) {
+  console.log('Sending quote:', quote, '\nto token:', token);
+  var device = new apn.Device(token);
+  var note = noteForQuote(quote);
+  apnConnection.pushNotification(note, device);
+}
 
-var note = new apn.Notification();
+function pushQuoteToAll(quote) {
+  var note = noteForQuote(quote);
 
-note.expiry = Math.floor(Date.now() / 1000) + 3600; // Expires 1 hour from now.
-note.badge = 3;
-note.sound = "ping.aiff";
-note.alert = "\uD83D\uDCE7 \u2709 You have a new message";
-note.payload = {'messageFrom': 'Caroline'};
+  getAllTokens(function(users) {
+    console.log('Sending quote:', quote);
+    users.forEach(function(user) {
+      var token = user.token;
+      if (token) {
+        var device = new apn.Device(token);
+        apnConnection.pushNotification(note, device);
+      }
+    });
+  });
+}
 
-apnConnection.pushNotification(note, myDevice);
+function getAllTokens(cb) {
+  User.find(function(err, users) {
+    if (err) console.error('Error getting all users');
+    cb(users);
+  });
+}
 
-
+module.exports = {
+  pushQuoteToAll: pushQuoteToAll,
+  pushQuoteToOne: pushQuoteToOne
+}

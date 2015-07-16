@@ -10,32 +10,44 @@ import Foundation
 
 class Notifier : NSObject {
     
-    var prophet: Prophet
+    var quoteLibrary: QuoteLibrary
     
     var timer: NSTimer?
     
-    override init() {
-        prophet = Prophet()
+    var host = "http://192.168.1.94:3000"
+    
+    var token: String
+    
+    init(tkn: String) {
+        quoteLibrary = QuoteLibrary()
+        token = tkn
         super.init()
+        register()
     }
     
-    static func register(token: String) {
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://192.168.1.94:3000/register")!)
+    func requestBlessing() {
+        post("blessing", payload: ["token": token])
+    }
+    
+    private func register() {
+        post("register", payload: ["token": token])
+    }
+    
+    private func handler (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void {
+        print(error?.description)
+    }
+    
+    private func post(endPoint: String, payload:Dictionary<String, String>) {
+        let request = NSMutableURLRequest(URL: NSURL(string: host + "/" + endPoint)!)
         request.HTTPMethod = "POST"
         request.allowsCellularAccess = false
         
-        let params = ["token": token] as Dictionary<String, String>
-        
         do {
-            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(params, options: [])
+            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(payload, options: [])
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             request.addValue("application/json", forHTTPHeaderField: "Accept")
         } catch {
             print("Error adding params to POST")
-        }
-        
-        func handler (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void {
-            print(error?.description)
         }
         
         let session = NSURLSession.sharedSession()
