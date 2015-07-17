@@ -1,9 +1,7 @@
 var apn = require('apn');
 var User = require('./user.js');
 
-var apnConnection = new apn.Connection({
-  production: true
-});
+var apnConnection = new apn.Connection({});
 
 function noteForQuote(quote) {
   var note = new apn.Notification();
