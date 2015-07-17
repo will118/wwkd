@@ -14,7 +14,7 @@ class Notifier : NSObject {
     
     var timer: NSTimer?
     
-    var host = "http://192.168.1.94:3000"
+    var host = "http://kush.io"
     
     var token: String
     
@@ -40,7 +40,6 @@ class Notifier : NSObject {
     private func post(endPoint: String, payload:Dictionary<String, String>) {
         let request = NSMutableURLRequest(URL: NSURL(string: host + "/" + endPoint)!)
         request.HTTPMethod = "POST"
-        request.allowsCellularAccess = false
         
         do {
             request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(payload, options: [])
