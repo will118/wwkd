@@ -8,10 +8,6 @@ var app = express();
 
 app.use(bodyParser.json());
 
-function testQuotes() {
-  console.log('testQuotes()');
-}
-
 app.use('/blessing', function (req, res) {
   console.log('Blessing requested:', req.body)
   if (req.body && req.body.token) {
