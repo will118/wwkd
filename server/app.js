@@ -10,8 +10,9 @@ app.use(bodyParser.json());
 
 app.get('/prophetic', function (req, res) {
   library.sumBoth(function(sums) {
-    console.log(sums);
-    res.send({score: 0.77});
+    var total = sums.ups + sums.downs;
+    var score = sums.ups / total;
+    res.send({score: score});
   });
 });
 
