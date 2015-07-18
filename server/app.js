@@ -8,6 +8,11 @@ var app = express();
 
 app.use(bodyParser.json());
 
+app.get('/prophetic', function (req, res) {
+  var score = 0.23;
+  res.send({score: score});
+});
+
 app.use('/vote', function (req, res) {
   console.log('Vote:', req.body)
   if (req.body && req.body.id && req.body.vote) {

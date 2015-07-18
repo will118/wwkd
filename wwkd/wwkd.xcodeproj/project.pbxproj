@@ -10,6 +10,8 @@
 		BE17E6241B56FBB300C452A9 /* Quote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE17E6221B56FBB300C452A9 /* Quote+CoreDataProperties.swift */; };
 		BE17E6251B56FBB300C452A9 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE17E6231B56FBB300C452A9 /* Quote.swift */; };
 		BE37CEA91B56F59D00EA260B /* QuoteLibrary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE37CEA71B56F59D00EA260B /* QuoteLibrary.xcdatamodeld */; };
+		BE540F4D1B5A802D00675A77 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE540F4C1B5A802D00675A77 /* Operators.swift */; };
+		BE540F4F1B5A814300675A77 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE540F4E1B5A814300675A77 /* Http.swift */; };
 		BE794C8F1B55A020006A1E6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE794C8E1B55A020006A1E6A /* AppDelegate.swift */; };
 		BE794C911B55A020006A1E6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE794C901B55A020006A1E6A /* ViewController.swift */; };
 		BE794C941B55A020006A1E6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE794C921B55A020006A1E6A /* Main.storyboard */; };
@@ -26,6 +28,7 @@
 		BE794CCB1B55A035006A1E6A /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE794CC91B55A035006A1E6A /* Notifier.swift */; };
 		BE794CCC1B55A035006A1E6A /* QuoteLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE794CCA1B55A035006A1E6A /* QuoteLibrary.swift */; };
 		BEC11F961B57223D0090A2BF /* quotes_library.json in Resources */ = {isa = PBXBuildFile; fileRef = BEC11F951B57223D0090A2BF /* quotes_library.json */; };
+		BEC11F9E1B5A6C3B0090A2BF /* CircleProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC11F9D1B5A6C3B0090A2BF /* CircleProgressBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,8 @@
 		BE17E6221B56FBB300C452A9 /* Quote+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Quote+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BE17E6231B56FBB300C452A9 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		BE37CEA81B56F59D00EA260B /* QuoteLibrary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QuoteLibrary.xcdatamodel; sourceTree = "<group>"; };
+		BE540F4C1B5A802D00675A77 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		BE540F4E1B5A814300675A77 /* Http.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
 		BE794C8B1B55A020006A1E6A /* wwkd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wwkd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE794C8E1B55A020006A1E6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE794C901B55A020006A1E6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +100,9 @@
 		BE794CC91B55A035006A1E6A /* Notifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
 		BE794CCA1B55A035006A1E6A /* QuoteLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteLibrary.swift; sourceTree = "<group>"; };
 		BEC11F951B57223D0090A2BF /* quotes_library.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes_library.json; sourceTree = "<group>"; };
+		BEC11F9B1B5A6C3B0090A2BF /* wwkd-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wwkd-Bridging-Header.h"; sourceTree = "<group>"; };
+		BEC11F9C1B5A6C3B0090A2BF /* CircleProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleProgressBar.h; sourceTree = "<group>"; };
+		BEC11F9D1B5A6C3B0090A2BF /* CircleProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleProgressBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +146,8 @@
 		BE794C8D1B55A020006A1E6A /* wwkd */ = {
 			isa = PBXGroup;
 			children = (
+				BEC11F9C1B5A6C3B0090A2BF /* CircleProgressBar.h */,
+				BEC11F9D1B5A6C3B0090A2BF /* CircleProgressBar.m */,
 				BE17E6221B56FBB300C452A9 /* Quote+CoreDataProperties.swift */,
 				BE17E6231B56FBB300C452A9 /* Quote.swift */,
 				BEC11F951B57223D0090A2BF /* quotes_library.json */,
@@ -150,6 +160,9 @@
 				BE794C951B55A020006A1E6A /* Assets.xcassets */,
 				BE794C971B55A020006A1E6A /* LaunchScreen.storyboard */,
 				BE794C9A1B55A020006A1E6A /* Info.plist */,
+				BEC11F9B1B5A6C3B0090A2BF /* wwkd-Bridging-Header.h */,
+				BE540F4C1B5A802D00675A77 /* Operators.swift */,
+				BE540F4E1B5A814300675A77 /* Http.swift */,
 			);
 			path = wwkd;
 			sourceTree = "<group>";
@@ -247,6 +260,7 @@
 		BE794C831B55A020006A1E6A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = will;
 				TargetAttributes = {
@@ -326,11 +340,14 @@
 			files = (
 				BE17E6241B56FBB300C452A9 /* Quote+CoreDataProperties.swift in Sources */,
 				BE794C911B55A020006A1E6A /* ViewController.swift in Sources */,
+				BEC11F9E1B5A6C3B0090A2BF /* CircleProgressBar.m in Sources */,
 				BE37CEA91B56F59D00EA260B /* QuoteLibrary.xcdatamodeld in Sources */,
 				BE794CCB1B55A035006A1E6A /* Notifier.swift in Sources */,
 				BE794CCC1B55A035006A1E6A /* QuoteLibrary.swift in Sources */,
 				BE17E6251B56FBB300C452A9 /* Quote.swift in Sources */,
 				BE794C8F1B55A020006A1E6A /* AppDelegate.swift in Sources */,
+				BE540F4D1B5A802D00675A77 /* Operators.swift in Sources */,
+				BE540F4F1B5A814300675A77 /* Http.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +445,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "wwkd/wwkd/wwkd-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -466,6 +484,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "wwkd/wwkd/wwkd-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -482,6 +501,7 @@
 				PROVISIONING_PROFILE = "ba7874cb-d730-4f86-8178-35d3a52a110a";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -499,6 +519,7 @@
 				PROVISIONING_PROFILE = "ba7874cb-d730-4f86-8178-35d3a52a110a";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -540,6 +561,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Will Bartlett (4MZ29SYXFM)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Will Bartlett (4MZ29SYXFM)";
 				INFOPLIST_FILE = wwkd/Info.plist;
@@ -548,6 +570,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kushio.wwkd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "15f4fb3f-92ad-41af-b8b7-f6bec7645d64";
+				SWIFT_OBJC_BRIDGING_HEADER = "wwkd/wwkd-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -555,6 +579,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Will Bartlett (4MZ29SYXFM)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Will Bartlett (4MZ29SYXFM)";
 				INFOPLIST_FILE = wwkd/Info.plist;
@@ -563,6 +588,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kushio.wwkd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "15f4fb3f-92ad-41af-b8b7-f6bec7645d64";
+				SWIFT_OBJC_BRIDGING_HEADER = "wwkd/wwkd-Bridging-Header.h";
 			};
 			name = Release;
 		};
