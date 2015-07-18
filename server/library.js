@@ -32,7 +32,9 @@ function sum(field, cb) {
     { $group: { _id: null, total: { $sum: "$" + field }} },
     function(err, res) {
       if (err) throw err;
-      cb(res);
+      if (res[0] && res[0].total) {
+        cb(res[0].total);
+      }
     }
   );
 }
