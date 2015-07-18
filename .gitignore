@@ -5,3 +5,4 @@ prod_certs
 *.p12
 node_modules
 dev_certs
+*.pxm

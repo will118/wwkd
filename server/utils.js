@@ -24,4 +24,4 @@ function loadDefaultIntoDb(cb) {
 
 }
 
-module.exports = { loadDefaultIntoDb: loadDefaultIntoDb }
+module.exports = { loadDefaultIntoDb: loadDefaultIntoDb };

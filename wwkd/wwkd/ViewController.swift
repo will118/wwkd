@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var timer : NSTimer?
+    
     @IBOutlet weak var progressBar: CircleProgressBar!
     
     @IBAction func blessButton(sender: AnyObject) {
@@ -27,7 +29,6 @@ class ViewController: UIViewController {
     }
     
     func applicationBecameActive(notification: NSNotification) {
-        updateWheel()
         AppDelegate.notifier?.pushVoteQueue()
         UIApplication.sharedApplication().applicationIconBadgeNumber = 0
     }
@@ -37,15 +38,15 @@ class ViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self,
             selector: "applicationBecameActive:",
             name: UIApplicationDidBecomeActiveNotification,
-            object: nil)
-        // Do any additional setup after loading the view, typically from a nib.
+            object: nil
+        )
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "updateWheel", userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
 
 }
 
