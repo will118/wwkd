@@ -10,7 +10,10 @@ function noteForQuote(quote, recipientCount) {
   note.sound = "ping.aiff";
   note.alert = quote.body;
   note.category = "ACTIONABLE";
-  note.payload = {'messageFrom': 'Yeezus'};
+  note.payload = {
+    'messageFrom': 'Yeezus',
+    'quoteId': quote.id
+  };
 
   if (recipientCount) {
     quote.shows = quote.shows + recipientCount;

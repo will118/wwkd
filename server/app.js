@@ -8,6 +8,16 @@ var app = express();
 
 app.use(bodyParser.json());
 
+app.use('/vote', function (req, res) {
+  console.log('Vote:', req.body)
+  if (req.body && req.body.id && req.body.vote) {
+    library.vote(req.body.id, req.body.vote);
+    res.status(200).send({ error: 'exists' });
+  } else {
+    res.status(200).send({ error: 'No id or vote provided' });
+  }
+})
+
 app.use('/blessing', function (req, res) {
   console.log('Blessing requested:', req.body)
   if (req.body && req.body.token) {
@@ -15,6 +25,7 @@ app.use('/blessing', function (req, res) {
     setTimeout(function() {
       library.getQuote(function(quote) { push.pushQuoteToOne(quote, req.body.token) });
     }, sleepTime);
+    res.status(200).send({ status: 'queued', duration: sleepTime });
   } else {
     res.status(200).send({ error: 'exists' });
   }

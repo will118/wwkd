@@ -13,4 +13,18 @@ function getQuote(cb) {
   })
 }
 
+function vote(id, vote) {
+  if (id && vote) {
+    Quote.findOne({id: id}, function(err, quote) {
+      if (err) throw err;
+      if (vote == "down") {
+        quote.downs++;
+      } else {
+        quote.ups++;
+      }
+      quote.save(function(err) { if (err) throw err; });
+    });
+  }
+}
+
 module.exports = { getQuote: getQuote }

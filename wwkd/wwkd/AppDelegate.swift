@@ -76,17 +76,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         print(error.localizedDescription)
     }
-    
+
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
         
-        let quoteId = "quoteIIDDIDIDIDI"
-        
-        if let actionId = identifier {
+        if let actionId = identifier, let quoteId = userInfo["quoteId"] as? Int {
             switch actionId {
             case actionProphetic:
-                rate(quoteId, vote: Vote.Prophetic)
+                vote(quoteId, vote: Vote.Prophetic)
             case actionIdiotic:
-                rate(quoteId, vote: Vote.Idiotic)
+                vote(quoteId, vote: Vote.Idiotic)
             default:
                 ()
             }
@@ -94,8 +92,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
-    func rate(quoteId: String, vote: Vote) {
-        
+    func vote(quoteId: Int, vote: Vote) {
+        AppDelegate.notifier?.vote(quoteId, vote: vote)
     }
 
     func applicationWillResignActive(application: UIApplication) {

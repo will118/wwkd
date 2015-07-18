@@ -29,6 +29,18 @@ class Notifier : NSObject {
         post("blessing", payload: ["token": token])
     }
     
+    func vote(quoteId: Int, vote: Vote) {
+        var upOrDown : String
+        switch vote {
+        case .Idiotic:
+            upOrDown = "down"
+        case .Prophetic:
+            upOrDown = "up"
+        }
+        let dict = ["id": quoteId, "vote": upOrDown]
+        post("vote", payload: dict as! Dictionary<String, AnyObject>)
+    }
+    
     private func register() {
         post("register", payload: ["token": token])
     }
@@ -37,7 +49,7 @@ class Notifier : NSObject {
         print(error?.description)
     }
     
-    private func post(endPoint: String, payload:Dictionary<String, String>) {
+    private func post(endPoint: String, payload:Dictionary<String, AnyObject>) {
         let request = NSMutableURLRequest(URL: NSURL(string: host + "/" + endPoint)!)
         request.HTTPMethod = "POST"
         
