@@ -18,13 +18,18 @@ function sum(field, cb) {
   );
 }
 
-app.get('/prophetic', function (req, res) {
+function sumBoth(cb) {
   sum("ups", function(ups) {
     sum("downs", function(downs) {
-      console.log('Ups:', ups);
-      console.log('Downs:', downs);
-      res.send({score: 0.29});
+      cb({ups: ups, downs: downs});
     });
+  });
+}
+
+app.get('/prophetic', function (req, res) {
+  sumBoth(function(sums) {
+    console.log(sums);
+    res.send({score: 0.77});
   });
 });
 
