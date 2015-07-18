@@ -27,4 +27,7 @@ function vote(id, vote) {
   }
 }
 
-module.exports = { getQuote: getQuote }
+module.exports = {
+  getQuote: getQuote,
+  vote: vote
+}

@@ -16,7 +16,7 @@ app.use('/vote', function (req, res) {
   } else {
     res.status(200).send({ error: 'No id or vote provided' });
   }
-})
+});
 
 app.use('/blessing', function (req, res) {
   console.log('Blessing requested:', req.body)

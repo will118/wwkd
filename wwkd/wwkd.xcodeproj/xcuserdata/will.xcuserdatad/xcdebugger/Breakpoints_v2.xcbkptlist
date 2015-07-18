@@ -22,16 +22,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "wwkd/Notifier.swift"
-            timestampString = "458773710.52912"
+            filePath = "wwkd/AppDelegate.swift"
+            timestampString = "458906663.996127"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "handler(_:response:error:)"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "vote(_:vote:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

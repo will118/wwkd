@@ -37,8 +37,8 @@ class Notifier : NSObject {
         case .Prophetic:
             upOrDown = "up"
         }
-        let dict = ["id": quoteId, "vote": upOrDown]
-        post("vote", payload: dict as! Dictionary<String, AnyObject>)
+        let dict = ["id": String(quoteId), "vote": upOrDown]
+        post("vote", payload: dict)
     }
     
     private func register() {
@@ -49,7 +49,7 @@ class Notifier : NSObject {
         print(error?.description)
     }
     
-    private func post(endPoint: String, payload:Dictionary<String, AnyObject>) {
+    private func post(endPoint: String, payload:Dictionary<String, String>) {
         let request = NSMutableURLRequest(URL: NSURL(string: host + "/" + endPoint)!)
         request.HTTPMethod = "POST"
         
