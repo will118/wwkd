@@ -17,8 +17,17 @@ class ViewController: UIViewController {
         UIApplication.sharedApplication().applicationIconBadgeNumber = 0
     }
     
+    func applicationBecameActive(notification: NSNotification) {
+        AppDelegate.notifier?.pushVoteQueue()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "applicationBecameActive:",
+            name: UIApplicationDidBecomeActiveNotification,
+            object: nil)
         // Do any additional setup after loading the view, typically from a nib.
     }
 

@@ -7,12 +7,15 @@
 //
 
 import Foundation
+import UIKit
 
 class Notifier : NSObject {
     
     var quoteLibrary: QuoteLibrary
     
     var timer: NSTimer?
+    
+    var votes : Array<Dictionary<String, String>> = []
     
     var host = "http://kush.io"
     
@@ -29,7 +32,7 @@ class Notifier : NSObject {
         post("blessing", payload: ["token": token])
     }
     
-    func vote(quoteId: Int, vote: Vote) {
+    func vote(quoteId: Int, vote: Vote, state: UIApplicationState) {
         var upOrDown : String
         switch vote {
         case .Idiotic:
@@ -38,7 +41,21 @@ class Notifier : NSObject {
             upOrDown = "up"
         }
         let dict = ["id": String(quoteId), "vote": upOrDown]
-        post("vote", payload: dict)
+        votes.append(dict)
+        switch state {
+        case .Active:
+            pushVoteQueue()
+        default:
+            ()
+        }
+    }
+    
+    func pushVoteQueue() {
+        let vs = Array(votes)
+        votes.removeAll()
+        for v in vs {
+            post("vote", payload: v)
+        }
     }
     
     private func register() {

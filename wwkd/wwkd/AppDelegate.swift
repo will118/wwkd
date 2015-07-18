@@ -89,11 +89,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 ()
             }
         }
-        
+        completionHandler()
     }
     
     func vote(quoteId: Int, vote: Vote) {
-        AppDelegate.notifier?.vote(quoteId, vote: vote)
+        let state = UIApplication.sharedApplication().applicationState
+        
+        AppDelegate.notifier?.vote(quoteId, vote: vote, state: state)
     }
 
     func applicationWillResignActive(application: UIApplication) {
