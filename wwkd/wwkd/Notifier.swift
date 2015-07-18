@@ -63,7 +63,9 @@ class Notifier : NSObject {
     }
     
     private func handler (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void {
-        print(error?.description)
+        if let e = error {
+            print(e.description)
+        }
     }
     
     private func post(endPoint: String, payload:Dictionary<String, String>) {
