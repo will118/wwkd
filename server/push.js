@@ -9,7 +9,7 @@ function noteForQuote(quote, recipientCount) {
   note.badge = 1;
   note.sound = "ping.aiff";
   note.alert = quote.body;
-  note.category = "ACTIONABLE-" + quote.id;
+  note.category = "ACTIONABLE";
   note.payload = {'messageFrom': 'Yeezus'};
 
   if (recipientCount) {
