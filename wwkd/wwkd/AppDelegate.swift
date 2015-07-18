@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 action.identifier = actionIdiotic
             }
             
-            action.destructive = true
+            action.destructive = false
             action.authenticationRequired = false
             
             return action
