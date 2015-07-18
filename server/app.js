@@ -10,12 +10,12 @@ app.use(bodyParser.json());
 
 function sum(field, cb) {
   Quote.aggregate(
-    $group: {
-      _id: null, total: { $sum: "$" + field }
-    }, function(err, res) {
+    { $group: { _id: null, total: { $sum: "$" + field }} },
+    function(err, res) {
       if (err) throw err;
       cb(res);
-  });
+    }
+  );
 }
 
 app.get('/prophetic', function (req, res) {
