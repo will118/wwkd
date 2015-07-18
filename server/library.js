@@ -2,13 +2,19 @@ var Quote = require('./quote.js');
 var utils = require('./utils.js');
 
 function getQuote(cb) {
-  Quote.find(function(err, quotes) {
+  Quote.find()
+    .sort({shows: asc})
+    .exec(function(err, quotes) {
     if (err) throw err;
     if (quotes.length < 1) {
       console.log('No quotes in db, will attempt to load defaults and retry this function.');
       utils.loadDefaultIntoDb(function() { getQuote(cb); });
     } else {
-      cb(quotes[Math.floor(Math.random()*quotes.length)]);
+      var min = Math.min.apply(Math, quotes.map(function(x){ return x.shows; }));
+      var minValues = quotes.filter(function(x) {
+        return x.shows === min;
+      });
+      cb(minValues[Math.floor(Math.random()*minValues.length)]);
     }
   });
 }
