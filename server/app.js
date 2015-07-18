@@ -8,9 +8,24 @@ var app = express();
 
 app.use(bodyParser.json());
 
+function sum(field, cb) {
+  Quote.aggregate(
+    $group: {
+      _id: null, total: { $sum: "$" + field }
+    }, function(err, res) {
+      if (err) throw err;
+      cb(res);
+  });
+}
+
 app.get('/prophetic', function (req, res) {
-  var score = 0.23;
-  res.send({score: score});
+  sum("ups", function(ups) {
+    sum("downs", function(downs) {
+      console.log('Ups:' ups);
+      console.log('Downs:' downs);
+      res.send({score: 0.29});
+    });
+  });
 });
 
 app.use('/vote', function (req, res) {
