@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         if let n = AppDelegate.notifier {
             n.requestBlessing()
         }
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
     }
     
     override func viewDidLoad() {

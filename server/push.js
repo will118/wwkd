@@ -3,15 +3,20 @@ var User = require('./user.js');
 
 var apnConnection = new apn.Connection({});
 
-function noteForQuote(quote) {
+function noteForQuote(quote, recipientCount) {
   var note = new apn.Notification();
   note.expiry = Math.floor(Date.now() / 1000) + 3600;
   note.badge = 1;
   note.sound = "ping.aiff";
   note.alert = quote.body;
+  note.category = "ACTIONABLE";
   note.payload = {'messageFrom': 'Yeezus'};
 
-  quote.shows++
+  if (recipientCount) {
+    quote.shows = quote.shows + recipientCount;
+  } else {
+    quote.shows++;
+  }
   quote.save(function(err) { if (err) throw err });
   return note;
 }
@@ -19,14 +24,13 @@ function noteForQuote(quote) {
 function pushQuoteToOne(quote, token) {
   console.log('Sending quote:', quote, '\nto token:', token);
   var device = new apn.Device(token);
-  var note = noteForQuote(quote);
+  var note = noteForQuote(quote, 1);
   apnConnection.pushNotification(note, device);
 }
 
 function pushQuoteToAll(quote) {
-  var note = noteForQuote(quote);
-
   getAllTokens(function(users) {
+    var note = noteForQuote(quote, users.length);
     console.log('Sending quote:', quote);
     users.forEach(function(user) {
       var token = user.token;

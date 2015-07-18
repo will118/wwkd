@@ -10,6 +10,10 @@ import UIKit
 import Foundation
 import CoreData
 
+enum Vote {
+    case Prophetic, Idiotic
+}
+
 class QuoteLibrary {
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
 

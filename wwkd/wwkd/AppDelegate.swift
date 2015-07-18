@@ -15,14 +15,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     static var notifier: Notifier?
+    
+    let actionProphetic = "PROPHETIC"
+    let actionIdiotic = "IDIOTIC"
+    let notificationCategoryIdent  = "ACTIONABLE"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let types =
             UIUserNotificationType.Badge.union(
             UIUserNotificationType.Alert.union(
             UIUserNotificationType.Sound))
+
+        func makeAction(vote: Vote) -> UIMutableUserNotificationAction {
+            let action = UIMutableUserNotificationAction()
+            action.activationMode = UIUserNotificationActivationMode.Background
+            
+            switch vote {
+            case .Prophetic:
+                action.title = "Prophetic"
+                action.identifier = actionProphetic
+            case .Idiotic:
+                action.title = "Idiotic"
+                action.identifier = actionIdiotic
+            }
+            
+            action.destructive = true
+            action.authenticationRequired = false
+            
+            return action
+        }
         
-        let settings = UIUserNotificationSettings(forTypes: types, categories: [])
+        let prophetic = makeAction(Vote.Prophetic)
+        let idiotic = makeAction(Vote.Idiotic)
+        
+        let actionCategory = UIMutableUserNotificationCategory()
+        actionCategory.identifier = notificationCategoryIdent
+        actionCategory.setActions([prophetic, idiotic], forContext: UIUserNotificationActionContext.Default)
+        
+        let categories = Set(arrayLiteral: actionCategory)
+        
+        let settings = UIUserNotificationSettings(forTypes: types, categories: categories)
         
         application.registerUserNotificationSettings(settings)
         application.registerForRemoteNotifications()
@@ -43,6 +75,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         print(error.localizedDescription)
+    }
+    
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
+        
+        let quoteId = "quoteIIDDIDIDIDI"
+        
+        if let actionId = identifier {
+            switch actionId {
+            case actionProphetic:
+                rate(quoteId, vote: Vote.Prophetic)
+            case actionIdiotic:
+                rate(quoteId, vote: Vote.Idiotic)
+            default:
+                ()
+            }
+        }
+        
+    }
+    
+    func rate(quoteId: String, vote: Vote) {
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {
