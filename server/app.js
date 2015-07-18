@@ -8,26 +8,8 @@ var app = express();
 
 app.use(bodyParser.json());
 
-function sum(field, cb) {
-  Quote.aggregate(
-    { $group: { _id: null, total: { $sum: "$" + field }} },
-    function(err, res) {
-      if (err) throw err;
-      cb(res);
-    }
-  );
-}
-
-function sumBoth(cb) {
-  sum("ups", function(ups) {
-    sum("downs", function(downs) {
-      cb({ups: ups, downs: downs});
-    });
-  });
-}
-
 app.get('/prophetic', function (req, res) {
-  sumBoth(function(sums) {
+  library.sumBoth(function(sums) {
     console.log(sums);
     res.send({score: 0.77});
   });
