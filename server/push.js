@@ -20,7 +20,7 @@ function noteForQuote(quote, recipientCount) {
   } else {
     quote.shows++;
   }
-  quote.save(function(err) { if (err) throw err });
+  quote.save(function(err) { if (err) throw err; });
   return note;
 }
 
@@ -55,4 +55,4 @@ function getAllTokens(cb) {
 module.exports = {
   pushQuoteToAll: pushQuoteToAll,
   pushQuoteToOne: pushQuoteToOne
-}
+};

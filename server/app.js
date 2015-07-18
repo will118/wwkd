@@ -21,15 +21,15 @@ function sum(field, cb) {
 app.get('/prophetic', function (req, res) {
   sum("ups", function(ups) {
     sum("downs", function(downs) {
-      console.log('Ups:' ups);
-      console.log('Downs:' downs);
+      console.log('Ups:', ups);
+      console.log('Downs:', downs);
       res.send({score: 0.29});
     });
   });
 });
 
 app.use('/vote', function (req, res) {
-  console.log('Vote:', req.body)
+  console.log('Vote:', req.body);
   if (req.body && req.body.id && req.body.vote) {
     library.vote(req.body.id, req.body.vote);
     res.status(200).send({ error: 'exists' });
@@ -39,25 +39,25 @@ app.use('/vote', function (req, res) {
 });
 
 app.use('/blessing', function (req, res) {
-  console.log('Blessing requested:', req.body)
+  console.log('Blessing requested:', req.body);
   if (req.body && req.body.token) {
     var sleepTime = 10 * 1000;
     setTimeout(function() {
-      library.getQuote(function(quote) { push.pushQuoteToOne(quote, req.body.token) });
+      library.getQuote(function(quote) { push.pushQuoteToOne(quote, req.body.token); });
     }, sleepTime);
     res.status(200).send({ status: 'queued', duration: sleepTime });
   } else {
     res.status(200).send({ error: 'exists' });
   }
-})
+});
 
 app.use('/register', function (req, res) {
-  console.log(req.body)
+  console.log(req.body);
   if (req.body && req.body.token) {
     User.count({'token': req.body.token}, function(err, count) {
       if (err) throw err;
 
-      if (count == 0) {
+      if (count === 0) {
         var user = new User();
         user.token = req.body.token;
         user.save(function(err) {
@@ -72,7 +72,7 @@ app.use('/register', function (req, res) {
   } else {
     res.status(200).send({ error: 'exists' });
   }
-})
+});
 
 app.listen(3000);
 
