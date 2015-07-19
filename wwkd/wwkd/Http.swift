@@ -26,7 +26,7 @@ class Http {
         return NSURL(string: urlToRequest) >>> { x in NSData(contentsOfURL: x) }
     }
     
-    static func post(endPoint: String, payload:Dictionary<String, String>) {
+    static func post(endPoint: String, payload:Dictionary<String, AnyObject>) {
         let request = NSMutableURLRequest(URL: NSURL(string: host + "/" + endPoint)!)
         request.HTTPMethod = "POST"
         

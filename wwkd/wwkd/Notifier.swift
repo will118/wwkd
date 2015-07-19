@@ -30,6 +30,14 @@ class Notifier : NSObject {
         Http.post("blessing", payload: ["token": token])
     }
     
+    func subscribeSettings(enabled: Bool, frequency: Int) {
+        Http.post("subscribe", payload: [
+            "token": token,
+            "subscribed": enabled,
+            "frequency": frequency,
+            "offset": NSTimeZone.localTimeZone().secondsFromGMT / 3600 ])
+    }
+    
     func vote(quoteId: Int, vote: Vote, state: UIApplicationState) {
         var upOrDown : String
         switch vote {

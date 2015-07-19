@@ -12,11 +12,11 @@
 		BE37CEA91B56F59D00EA260B /* QuoteLibrary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE37CEA71B56F59D00EA260B /* QuoteLibrary.xcdatamodeld */; };
 		BE540F4D1B5A802D00675A77 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE540F4C1B5A802D00675A77 /* Operators.swift */; };
 		BE540F4F1B5A814300675A77 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE540F4E1B5A814300675A77 /* Http.swift */; };
+		BE540F521B5AF2AA00675A77 /* JTMaterialTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = BE540F501B5AF2AA00675A77 /* JTMaterialTransition.m */; };
 		BE794C8F1B55A020006A1E6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE794C8E1B55A020006A1E6A /* AppDelegate.swift */; };
 		BE794C911B55A020006A1E6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE794C901B55A020006A1E6A /* ViewController.swift */; };
 		BE794C941B55A020006A1E6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE794C921B55A020006A1E6A /* Main.storyboard */; };
 		BE794C961B55A020006A1E6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE794C951B55A020006A1E6A /* Assets.xcassets */; };
-		BE794C991B55A020006A1E6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE794C971B55A020006A1E6A /* LaunchScreen.storyboard */; };
 		BE794C9E1B55A020006A1E6A /* wwkd WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = BE794C9D1B55A020006A1E6A /* wwkd WatchKit App.app */; };
 		BE794CA41B55A020006A1E6A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE794CA21B55A020006A1E6A /* Interface.storyboard */; };
 		BE794CA61B55A020006A1E6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE794CA51B55A020006A1E6A /* Assets.xcassets */; };
@@ -79,12 +79,13 @@
 		BE37CEA81B56F59D00EA260B /* QuoteLibrary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QuoteLibrary.xcdatamodel; sourceTree = "<group>"; };
 		BE540F4C1B5A802D00675A77 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		BE540F4E1B5A814300675A77 /* Http.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
+		BE540F501B5AF2AA00675A77 /* JTMaterialTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTMaterialTransition.m; sourceTree = "<group>"; };
+		BE540F511B5AF2AA00675A77 /* JTMaterialTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTMaterialTransition.h; sourceTree = "<group>"; };
 		BE794C8B1B55A020006A1E6A /* wwkd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wwkd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE794C8E1B55A020006A1E6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE794C901B55A020006A1E6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BE794C931B55A020006A1E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE794C951B55A020006A1E6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BE794C981B55A020006A1E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE794C9A1B55A020006A1E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE794C9D1B55A020006A1E6A /* wwkd WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wwkd WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE794CA31B55A020006A1E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -146,6 +147,8 @@
 		BE794C8D1B55A020006A1E6A /* wwkd */ = {
 			isa = PBXGroup;
 			children = (
+				BE540F501B5AF2AA00675A77 /* JTMaterialTransition.m */,
+				BE540F511B5AF2AA00675A77 /* JTMaterialTransition.h */,
 				BEC11F9C1B5A6C3B0090A2BF /* CircleProgressBar.h */,
 				BEC11F9D1B5A6C3B0090A2BF /* CircleProgressBar.m */,
 				BE17E6221B56FBB300C452A9 /* Quote+CoreDataProperties.swift */,
@@ -158,7 +161,6 @@
 				BE794C901B55A020006A1E6A /* ViewController.swift */,
 				BE794C921B55A020006A1E6A /* Main.storyboard */,
 				BE794C951B55A020006A1E6A /* Assets.xcassets */,
-				BE794C971B55A020006A1E6A /* LaunchScreen.storyboard */,
 				BE794C9A1B55A020006A1E6A /* Info.plist */,
 				BEC11F9B1B5A6C3B0090A2BF /* wwkd-Bridging-Header.h */,
 				BE540F4C1B5A802D00675A77 /* Operators.swift */,
@@ -307,7 +309,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE794C991B55A020006A1E6A /* LaunchScreen.storyboard in Resources */,
 				BE794C961B55A020006A1E6A /* Assets.xcassets in Resources */,
 				BE794C941B55A020006A1E6A /* Main.storyboard in Resources */,
 				BEC11F961B57223D0090A2BF /* quotes_library.json in Resources */,
@@ -339,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE17E6241B56FBB300C452A9 /* Quote+CoreDataProperties.swift in Sources */,
+				BE540F521B5AF2AA00675A77 /* JTMaterialTransition.m in Sources */,
 				BE794C911B55A020006A1E6A /* ViewController.swift in Sources */,
 				BEC11F9E1B5A6C3B0090A2BF /* CircleProgressBar.m in Sources */,
 				BE37CEA91B56F59D00EA260B /* QuoteLibrary.xcdatamodeld in Sources */,
@@ -383,14 +385,6 @@
 				BE794C931B55A020006A1E6A /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		BE794C971B55A020006A1E6A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BE794C981B55A020006A1E6A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		BE794CA21B55A020006A1E6A /* Interface.storyboard */ = {

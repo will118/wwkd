@@ -57,12 +57,19 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Rm-1c-wYD">
+                                <rect key="frame" x="163" y="172" width="51" height="31"/>
+                                <connections>
+                                    <action selector="subscriptionToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WbU-K2-uIi"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="progressBar" destination="33u-wu-8KL" id="kFd-Hs-l7T"/>
+                        <outlet property="toggle" destination="4Rm-1c-wYD" id="oYw-KT-cjr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -9,12 +9,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "wwkd/wwkd-Bridging-Header.h"
-            timestampString = "458917207.671037"
+            filePath = "wwkd/ViewController.swift"
+            timestampString = "458982003.029696"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "5"
-            endingLineNumber = "5">
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "subscriptionToggle(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

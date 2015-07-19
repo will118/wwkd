@@ -1,5 +1,6 @@
 var apn = require('apn');
 var User = require('./user.js');
+var library = require('./library.js');
 
 var apnConnection = new apn.Connection({});
 
@@ -31,28 +32,51 @@ function pushQuoteToOne(quote, token) {
   apnConnection.pushNotification(note, device);
 }
 
-function pushQuoteToAll(quote) {
-  getAllTokens(function(users) {
-    var note = noteForQuote(quote, users.length);
-    console.log('Sending quote:', quote);
-    users.forEach(function(user) {
-      var token = user.token;
-      if (token) {
-        var device = new apn.Device(token);
-        apnConnection.pushNotification(note, device);
-      }
-    });
-  });
+var startHour = 9;
+var endHour = 21;
+var hourCount = 0;
+
+function filterSubscribed(user) {
+  var currentHour = new Date().getHours();
+  var localHours = currentHour + user.offset;
+  var inWindow = (startHour <= localHours) && (localHours <= endHour);
+  var wantsUpdate = (hourCount % user.frequency) === 0;
+
+  if (user.subscribed && inWindow && wantsUpdate) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
-function getAllTokens(cb) {
-  User.find(function(err, users) {
-    if (err) console.error('Error getting all users');
-    cb(users);
-  });
+function startScheduler() {
+  setInterval(function() {
+    library.getQuote(function(quote) {
+      User.find(function(err, users) {
+        if (err) console.error('Error getting all users');
+        var note = noteForQuote(quote, users.length);
+        console.log('Sending quote:', quote);
+
+        users
+          .filter(filterSubscribed)
+          .forEach(function(user) {
+            var token = user.token;
+            if (token) {
+              console.log('to user:', token);
+              var device = new apn.Device(token);
+              apnConnection.pushNotification(note, device);
+            }
+          });
+
+        hourCount++;
+      });
+    });
+  }, 1000 * 60 * 60);
 }
 
 module.exports = {
   pushQuoteToAll: pushQuoteToAll,
-  pushQuoteToOne: pushQuoteToOne
+  pushQuoteToOne: pushQuoteToOne,
+  startScheduler: startScheduler
 };
+
