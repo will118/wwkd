@@ -75,7 +75,6 @@ function startScheduler() {
 }
 
 module.exports = {
-  pushQuoteToAll: pushQuoteToAll,
   pushQuoteToOne: pushQuoteToOne,
   startScheduler: startScheduler
 };
