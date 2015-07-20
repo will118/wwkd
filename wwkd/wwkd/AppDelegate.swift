@@ -79,6 +79,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
         
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+        
         if let actionId = identifier, let quoteId = userInfo["quoteId"] as? Int {
             switch actionId {
             case actionProphetic:

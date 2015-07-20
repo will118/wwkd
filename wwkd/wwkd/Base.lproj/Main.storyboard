@@ -120,8 +120,14 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EBJ-Xf-GBr">
+                                <rect key="frame" x="226" y="337" width="51" height="31"/>
+                                <connections>
+                                    <action selector="changed:" destination="nI2-Us-5QK" eventType="touchUpInside" id="EV0-qf-Gc0"/>
+                                </connections>
+                            </switch>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fpz-of-ED2">
-                                <rect key="frame" x="188" y="390" width="125" height="29"/>
+                                <rect key="frame" x="197" y="390" width="110" height="29"/>
                                 <segments>
                                     <segment title="1"/>
                                     <segment title="3"/>
@@ -136,12 +142,6 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FSb-Jr-g7b">
                                 <rect key="frame" x="168" y="181" width="156" height="205"/>
                             </pickerView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EBJ-Xf-GBr">
-                                <rect key="frame" x="226" y="337" width="51" height="31"/>
-                                <connections>
-                                    <action selector="changed:" destination="nI2-Us-5QK" eventType="touchUpInside" id="EV0-qf-Gc0"/>
-                                </connections>
-                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
