@@ -3,4 +3,3 @@
 //
 
 #import "CircleProgressBar.h"
-#import "JTMaterialTransition.h"

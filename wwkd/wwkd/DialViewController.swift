@@ -8,23 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
-    
-//    var transition : JTMaterialTransition?
-//    
-//    var presetControllerButton : UIButton?
+class DialViewController: UIViewController {
     
     var timer : NSTimer?
     
     @IBOutlet weak var progressBar: CircleProgressBar!
-    
-    @IBOutlet weak var toggle: UISwitch!
-    
-    @IBAction func subscriptionToggle(sender: AnyObject) {
-        if let n = AppDelegate.notifier {
-            n.subscribeSettings(toggle.on, frequency: 1)
-        }
-    }
     
     @IBAction func blessButton(sender: AnyObject) {
         if let n = AppDelegate.notifier {
@@ -55,9 +43,8 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
         
         timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "updateWheel", userInfo: nil, repeats: true)
         
-        //transition = JTMaterialTransition(animatedView: presetControllerButton);
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

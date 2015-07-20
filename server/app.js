@@ -70,7 +70,7 @@ app.use('/register', function (req, res) {
 });
 
 app.use('/subscribe', function (req, res) {
-  console.log('Updated subscription settings:', req.body);
+  console.log('Updating subscription settings:', req.body);
   if (req.body && req.body.token && req.body.subscribed && req.body.frequency && req.body.offset) {
     User.findOne({'token': req.body.token}, function(err, user) {
       if (err) throw err;
