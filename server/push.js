@@ -37,7 +37,7 @@ var endHour = 21;
 var hourCount = 0;
 
 function filterSubscribed(user) {
-  var currentHour = new Date().getHours();
+  var currentHour = new Date().getUTCHours();
   var localHours = currentHour + user.offset;
   var inWindow = (startHour <= localHours) && (localHours <= endHour);
   var wantsUpdate = (hourCount % user.frequency) === 0;
