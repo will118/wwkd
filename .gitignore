@@ -1,6 +1,7 @@
 .DS_Store
 prod_certs
 *.pem
+*.cer
 *.crt
 *.p12
 node_modules

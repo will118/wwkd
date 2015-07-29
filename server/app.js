@@ -32,7 +32,7 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', function (req, res) {
 
   library.getQuote(function(quote) {
-    res.render('index',
+    res.render('quote',
     { title : 'Quote',
       quote : quote.body }
     );
@@ -43,7 +43,7 @@ app.get('/quote/:id', function (req, res) {
   var quoteId = req.params.id;
   if (quoteId) {
     library.findQuote(quoteId, function(quote) {
-      res.render('index',
+      res.render('quote',
       { title : 'Quote',
         quote : quote.body }
       );
