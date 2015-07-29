@@ -2,7 +2,13 @@ var Quote = require('./quote.js');
 var utils = require('./utils.js');
 
 function getQuote(cb) {
-  Quote.find()
+  findQuote(null, cb);
+}
+
+function findQuote(id, cb) {
+  var quotes = id ? Quote.find({id: id}) : Quote.find();
+
+  quotes
     .sort({shows: 'asc'})
     .exec(function(err, quotes) {
     if (err) throw err;
@@ -56,6 +62,7 @@ function sumBoth(cb) {
 
 module.exports = {
   getQuote: getQuote,
+  findQuote: findQuote,
   sumBoth: sumBoth,
   vote: vote
 };

@@ -3,12 +3,53 @@ var bodyParser = require('body-parser');
 var User = require('./user.js');
 var library = require('./library.js');
 var push = require('./push.js');
+var nib = require('nib');
+var stylus = require('stylus');
+var morgan = require('morgan');
 
 var app = express();
 
 app.use(bodyParser.json());
 
 push.startScheduler();
+
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
+app.use(morgan('dev'));
+
+app.use(stylus.middleware(
+  { src: __dirname + '/public',
+    compile: function(str, path) {
+      return stylus(str)
+        .set('filename', path)
+        .use(nib());
+    }
+  }
+));
+
+app.use(express.static(__dirname + '/public'));
+
+app.get('/', function (req, res) {
+
+  library.getQuote(function(quote) {
+    res.render('index',
+    { title : 'Quote',
+      quote : quote.body }
+    );
+  });
+});
+
+app.get('/quote/:id', function (req, res) {
+  var quoteId = req.params.id;
+  if (quoteId) {
+    library.findQuote(quoteId, function(quote) {
+      res.render('index',
+      { title : 'Quote',
+        quote : quote.body }
+      );
+    });
+  }
+});
 
 app.get('/prophetic', function (req, res) {
   library.sumBoth(function(sums) {
