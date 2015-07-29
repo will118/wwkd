@@ -3,7 +3,7 @@ var utils = require('./utils.js');
 
 function getQuote(cb) {
   Quote.find()
-    .sort({shows: asc})
+    .sort({shows: 'asc'})
     .exec(function(err, quotes) {
     if (err) throw err;
     if (quotes.length < 1) {
