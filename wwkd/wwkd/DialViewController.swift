@@ -28,11 +28,6 @@ class DialViewController: UIViewController {
         }
     }
     
-    func applicationBecameActive(notification: NSNotification) {
-        AppDelegate.notifier?.pushVoteQueue()
-        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self,

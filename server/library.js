@@ -14,6 +14,7 @@ function getQuote(cb) {
       var minValues = quotes.filter(function(x) {
         return x.shows === min;
       });
+      minValues.sort(function(a, b) { return a.length - b.length; });
       cb(minValues[Math.floor(Math.random()*minValues.length)]);
     }
   });
